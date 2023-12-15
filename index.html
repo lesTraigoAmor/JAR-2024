@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Probar Edición Mágica.png">
+    <style>
+        .header{
+            background-image: url("jarnvo.png");
+            height: 100%;
+            min-height: 768px;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-size:cover;
+             position: relative;
+             margin: 0;
+        }
+        #countdown{
+            display: flex;
+            flex-wrap:wrap;
+            position:relative;
+         }
+
+         .barra{
+            text-align:left;
+            margin-left: 20px;
+            display: flex;
+            place-items:center;
+        }
+        .barra h2{
+            font-family: 'Bebas Neue', sans-serif;
+            margin-top: 50px;
+            margin-left: 125px;
+        } 
+        #days { 
+                font-weight: 900;
+                font-size: 45px;
+                color: #7abbf4;
+                line-height: 30px;
+                margin: 0;
+                font-family: inherit;
+         }
+        #hours{        
+                font-weight: 900;
+                font-size: 45px;
+                color: #7abbf4;
+                line-height: 30px;
+                margin: 0;
+                font-family: inherit;
+        }
+        #minutes{
+                font-weight: 900;
+                font-size: 45px;
+                color: #7abbf4;
+                line-height: 30px;
+        }
+        #seconds{
+                font-weight: 900;
+                font-size: 45px;
+                color: #7abbf4;
+                line-height: 30px;
+        }
+        .container-fluid{
+            background-color:transparent;
+            overflow: hidden !important;
+        }
+        .navbar{
+            background-color:transparent !important;
+            overflow: hidden !important;
+            padding: 0;
+        }
+        #navbarNav{
+            display: flex;
+            /* flex-wrap: nowrap; */
+            /* text-align: center; */
+            justify-content: center;
+            background-color:transparent;
+            overflow: hidden !important;
+
+                }
+        .navbar-nav li{   
+            padding: 0 30px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size:large;
+            background-color:transparent;
+            text-decoration: none;
+            color:transparent;
+        }
+        .navbar-nav{
+            background-color: transparent;
+            overflow: hidden !important;
+        }
+        .navbar-toggler{
+            background-color: transparent;
+        }
+        #footer{
+            display: flex;
+            justify-content:space-evenly;
+            padding: 5px 0;        
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Pincipal</a>
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link" href="#sobre">Sobre las JAR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Comité</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Inscripción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#fechas">Fechas importantes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Programa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Entrega de Trabajos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#lugar">Lugar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- <div id="countdown">
+        <div class="slot" id="days"></div>
+            <p id="diastxt">Dias</p>
+        <div class="slot" id="hours"></div>
+            <p id="horastxt">Horas</p>
+        <div class="slot" id="minutes"></div>
+            <p id="minutostxt">Minutos</p>
+        <div class="slot" id="seconds"></div>
+            <p id="segundostxt">Segundos</p>
+     </div> -->
+    </div>
+
+    <div id="flipdown" class="flipdown"></div>
+
+    <div class="container-fluid">
+      <div class="barra row" id="sobre">
+        <div class="col-md-6" style="">
+            <img src="cero+infinito-aula.jpg" alt="" width="100%" height="330px" style="">
+         </div>
+         <div class="col-md-6" style="padding-left: 20px;">
+            <h2 style="padding-left: 60px;"><strong>Sobre las JAR</strong></h2>
+            <p>
+                Las Jornadas Argentinas de Robótica (JAR) tienen por objetivo principal generar un espacio para la difusión de avances en la materia, el intercambio de experiencias y la discusión entre investigadores dedicados a esta disciplina, siendo además una gran oportunidad para estudiantes de grado y posgrado para su interacción con investigadores y conferencistas distinguidos, incentivando el interés por la investigación tecnológica y científica.
+                <br><br>
+                Siguiendo una tradición iniciada en San Juan en el año 2000, en cada nueva edición se hacen presentes los principales referentes de la robótica en Argentina. En 2024 la Décimoquinta edición de las JAR se realizará en la Facultad de ciencias exactas y naturales de la UBA, en la Ciudad de Buenos Aires.
+            </p>
+         </div>
+       </div>    
+    </div>  
+
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <div class="barra row" id="fechas">
+            <div class="col-md-6" style="">
+                <h2 style="padding-left: 30px;"><strong>Fechas Importantes</strong></h2>
+                 <p><ion-icon name="chevron-forward-sharp"></ion-icon>  Apertura de inscripciones y de envío de trabajos: 1 de marzo de 2024
+                 <br>
+                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Cierre recepción de trabajos: 31 de marzo de 2024
+                 <br>
+                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Notificación revisiones y aceptación de trabajos: 29 de abril de 2024
+                 <br>
+                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Cierre versión definitiva de trabajos y de inscripciones: 10 de abril de 2024
+                 <br>
+                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Publicación Programa Definitivo: 24 de mayo de 
+                 <br>
+                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Realización de las JAR2024: del 4 al 7 de junio de 2024</p>
+            </div>
+
+            <div class="col-md-6" style="">
+                <img src="cero+infinito1.jpg" alt=" "width="100%" height="330px">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <div class="barra row" id="lugar">
+            <div class="col-md-6" style="padding-bottom: 20px; ">
+                <h2 style="padding-left: 90px;";><strong>Lugar</strong></h2> 
+                <p>
+                    Las JAR2024 tendrán lugar en el edificio Cero + Infinito de la Ciudad Universitaria de la Universidad de Buenos Aires. Construído bajo la dirección del reconocido arquitecto Rafael Viñoly, este edificio posee más de 17.000 m^2 en dos plantas y subsuelo de servicios. Su concepto se apoya en dos jardines internos arbolados: el “cero” y el “infinito”, nombradas de esa manera por las figuras que representan sus contornos. Su perímetro está completamente vidriado, lo que permite que todos y cada uno de los ambientes dispongan de luz natural, cuenta con techo verde en toda su superficie y un sistema de climatización termomecánica que permite un ahorro del 70% de la energía.
+                </p>
+            </div>
+            <div class="col-md-6" >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.348480487198!2d-58.446042607821354!3d-34.544007159695326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5cb82d2f7bf%3A0xbcc4701a1bdae266!2sCiudad%20Universitaria%20-%20UBA%20-%20Pabell%C3%B3n%20Cero%2BInfinito!5e0!3m2!1ses!2sar!4v1701807337310!5m2!1ses!2sar" width="600" height="330" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="barra row" id="contacto">
+            <div class="col-md-6" >
+                <img src="a281df20-5e03-497c-b95c-c4e46fd25a71.jpg" alt=" "width="100%" height="fixed">
+            </div>    
+            <div class="col-md-6" style="padding-bottom: 20px; ">
+                <h2 style="padding-left: 120px;";><strong>Contacto</strong></h2> 
+                <br>
+                <p style="text-align: center;">
+                   <strong> <ion-icon name="mail-outline"></ion-icon>  info@jar.com.ar </strong>
+                </p>
+            </div>    
+        </div>
+    </div>
+
+    <br>
+
+     <div class="" id="form">
+
+     </div>
+
+     <div id="footer" style="background-color:#ffffff;">
+        <img src="logo-CONICET_opt.png" alt=""> 
+        <img src="UBAnegro2.jpg" alt="""> 
+        <img src="1.png" alt="">
+     </div>
+
+
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    <title>Document</title>
+     <script src="index.js"></script>
+
+
+</body>
+</html>

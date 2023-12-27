@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="titleCtrl">
 <head>
+    <title>JAR 2024</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -11,20 +12,19 @@
     <style>
         .header{
             background-image: url("jarnvo.png");
-            height: 100%;
             min-height: 768px;
-             background-position: center;
-             background-repeat: no-repeat;
-             background-size:cover;
-             position: relative;
-             margin: 0;
+            width:auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:100%;
+            position:relative;
+            aspect-ratio: 16 / 9;
         }
         #countdown{
             display: flex;
             flex-wrap:wrap;
             position:relative;
          }
-
          .barra{
             text-align:left;
             margin-left: 20px;
@@ -64,22 +64,30 @@
                 color: #7abbf4;
                 line-height: 30px;
         }
+        iframe {
+                width: 100%;
+                height: 100%;
+                 aspect-ratio: 16 / 9;
+                
+        }
+
         .container-fluid{
             background-color:transparent;
-            overflow: hidden !important;
+            /* overflow: hidden !important; */
         }
         .navbar{
             background-color:transparent !important;
-            overflow: hidden !important;
+            /* overflow: hidden !important; */
             padding: 0;
         }
         #navbarNav{
+            margin-top: 30px;
             display: flex;
             /* flex-wrap: nowrap; */
             /* text-align: center; */
             justify-content: center;
             background-color:transparent;
-            overflow: hidden !important;
+            /* overflow: hidden !important; */
 
                 }
         .navbar-nav li{   
@@ -92,23 +100,115 @@
         }
         .navbar-nav{
             background-color: transparent;
-            overflow: hidden !important;
+            /* overflow: hidden !important; */
         }
         .navbar-toggler{
             background-color: transparent;
         }
+        .nav-link{
+          color:#f1f1f1;
+        }
         #footer{
             display: flex;
+            flex: 1;
             justify-content:space-evenly;
             padding: 5px 0;        
         }
-        .nav-link{
+        .wrapper { 
+            overflow:hidden;
         }
+        .wrapper div {
+           min-height: 50px;
+           padding: 15px;
+        }
+        #two { 
+          overflow:hidden;
+          min-height:150px;
+          min-width: 100px;
+          text-align: center;
+        }
+        .flex-container {
+           display:flex;
+           flex-wrap: wrap;
+        }
+        .flex-container > div {
+            margin: 10px;
+            text-align: center;
+           line-height: 75px;
+           font-size: 15px;
+           flex:25%;
+        }
+        #fi2{
+          background-image: url(0+inftransparente.jpg);
+          background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position:relative;
+            aspect-ratio: 16 / 9; 
+        }
+
+
     </style>
 </head>
 <body>
     <div class="header">
+
+
+
+
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"> 
+                <a class="nav-link" href="#sobre">Sobre las JAR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Comité</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Inscripción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Charlas Plenarias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">vinculación con la industria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#fechas">Fechas importantes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#temas">Temas de interés</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Programa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="construccion.png">Envío de Trabajos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#lugar">Lugar</a>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+      <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -145,7 +245,7 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> -->
       <!-- <div id="countdown">
         <div class="slot" id="days"></div>
             <p id="diastxt">Dias</p>
@@ -159,18 +259,20 @@
     </div>
 
     <div id="flipdown" class="flipdown"></div>
+    <br>
+    <br>
 
     <div class="container-fluid">
       <div class="barra row" id="sobre">
         <div class="col-md-6" style="">
             <img src="cero+infinito-aula.jpg" class="img-fluid" alt="Responsive image">
          </div>
-         <div class="col-md-6" style="padding-left: 20px;">
-            <h2 style="padding-left: 60px;"><strong>Sobre las JAR</strong></h2>
-            <p>
-                Las Jornadas Argentinas de Robótica (JAR) tienen por objetivo principal generar un espacio para la difusión de avances en la materia, el intercambio de experiencias y la discusión entre investigadores dedicados a esta disciplina, siendo además una gran oportunidad para estudiantes de grado y posgrado para su interacción con investigadores y conferencistas distinguidos, incentivando el interés por la investigación tecnológica y científica.
+         <div class="col-md-6" style="text-align: justify;" >
+            <h2 style="display: block; text-align: center;"><strong>Sobre las JAR</strong></h2>
+            <p text-align="justify">
+                Las Jornadas Argentinas de Robótica (JAR) se realizan cada dos años en diferentes universidades y centros de investigación del país de manera ininterrumpida desde el año 2000.  El objetivo principal es generar un espacio de reunión para la comunidad de investigadores argentinos y de la región cuyo interés y dedicación están puestos en la robótica. El crecimiento de la participación en las últimas ediciones la consagran como el evento académico más importante en la materia. Las JAR brindan un ámbito ideal para la presentación de trabajos que contengan resultados originales y que representen los principales avances alcanzados, siendo además una gran oportunidad para el intercambio de experiencias entre investigadores ya formados y estudiantes de postgrado de carreras afines a la robótica. 
                 <br><br>
-                Siguiendo una tradición iniciada en San Juan en el año 2000, en cada nueva edición se hacen presentes los principales referentes de la robótica en Argentina. En 2024 la Décimoquinta edición de las JAR se realizará en la Facultad de ciencias exactas y naturales de la UBA, en la Ciudad de Buenos Aires.
+                La XII edición de las JAR incluirá charlas plenarias dictadas por conferencistas nacionales distinguidos e investigadores extranjeros reconocidos internacionalmente, múltiples sesiones de presentaciones de trabajos que hayan sido evaluados por revisores especialistas y aceptados por el Comité Académico de las JAR; talleres sobre temas específicos como ROS (Robot Operating System), espacios de debate, exposiciones y stands de robots y actividades de vinculación con la industria.
             </p>
          </div>
        </div>    
@@ -180,20 +282,42 @@
     <br>
 
     <div class="container-fluid">
-        <div class="barra row" id="fechas">
+        <div class="barra row" id="temas">
             <div class="col-md-6" style="">
-                <h2 style="padding-left: 30px;"><strong>Fechas Importantes</strong></h2>
-                 <p><ion-icon name="chevron-forward-sharp"></ion-icon>  Apertura de inscripciones y de envío de trabajos: 1 de marzo de 2024
-                 <br>
-                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Cierre recepción de trabajos: 31 de marzo de 2024
-                 <br>
-                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Notificación revisiones y aceptación de trabajos: 29 de abril de 2024
-                 <br>
-                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Cierre versión definitiva de trabajos y de inscripciones: 10 de abril de 2024
-                 <br>
-                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Publicación Programa Definitivo: 24 de mayo de 
-                 <br>
-                 <ion-icon name="chevron-forward-sharp"></ion-icon>  Realización de las JAR2024: del 4 al 7 de junio de 2024</p>
+                <h2 style="text-align: justify;"><strong>Temas de interés</strong></h2>
+                <p><strong>Los temas de interés de las JAR incluyen, pero no se limitan a:</strong></p>
+
+                <p><ion-icon name="chevron-forward-sharp"></ion-icon> Diseño de arquitecturas y sistemas para robots
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Modelado, identificación y control de robots
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Planificación de trayectorias
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Localización y mapeo simultáneo (SLAM)
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Aprendizaje automático en robtica
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Visión en robótica
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Interacción humano-robot (HRI)
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Robots humanoides, atrópodos y robótica bio-inspirada
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Manipuladores y robótica industrial
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Robótica para la rehabilitación
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Robótica aérea
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Robótica acuática y subacuática
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Fusión de sensores
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Simulación y teleoperación
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Sistemas multi-robots y robótica cooperativa
+                  <br>
+                  <ion-icon name="chevron-forward-sharp"></ion-icon> Robotica educativa</p>
             </div>
 
             <div class="col-md-6" style="">
@@ -204,19 +328,52 @@
 
     <br>
     <br>
+    <div class="background" id="fi2" style="display: block;">
+    <div class="barra" id="fechas" style="justify-content: center; ";>
+      <h2 style="position: relative; font-size: 50px;"><strong>Fechas Importantes</strong></h2>
+      </div>
+      <div class="flex-container" id="fi">
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="megaphone-outline"></ion-icon></h1><h3><strong>1 Marzo 2024</strong></h3>Apertura de inscripciones y envío de trabajos</div>
+        </div>
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="cloud-upload-outline"></ion-icon></h1><h3><strong>31 Marzo 2024</strong></h3>Cierre recepción de trabajos</div>
+        </div>
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="paper-plane-outline"></ion-icon></h1><h3><strong>29 Abril 2024</strong></h3>Notificación revisiones y aceptación de trabajos</div>
+        </div>
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="document-lock-outline"></ion-icon></h1><h3><strong>10 Abril 2024</strong></h3>Cierre versión definitiva de trabajos y de inscripciones</div>
+        </div>
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="book-outline"></ion-icon></h1><h3><strong>24 Mayo 2024</strong></h3>Publicación Programa Definitivo</div>
+        </div>
+        <div class="wrapper">
+          <div id="two"><h1><ion-icon name="flag-outline"></ion-icon></h1><h3><strong>4 - 7 Junio 2024</strong></h3>Realización de las JAR2024</div>
+        </div> 
+      </div>
+    </div>
+
+      <br>
+      <br>
 
     <div class="container-fluid">
         <div class="barra row" id="lugar">
             <div class="col-md-6" style="padding-bottom: 20px; ">
                 <h2 style="padding-left: 90px;";><strong>Lugar</strong></h2> 
-                <p>
-                    Las JAR2024 tendrán lugar en el edificio Cero + Infinito de la Ciudad Universitaria de la Universidad de Buenos Aires. Construído bajo la dirección del reconocido arquitecto Rafael Viñoly, este edificio posee más de 17.000 m^2 en dos plantas y subsuelo de servicios. Su concepto se apoya en dos jardines internos arbolados: el “cero” y el “infinito”, nombradas de esa manera por las figuras que representan sus contornos. Su perímetro está completamente vidriado, lo que permite que todos y cada uno de los ambientes dispongan de luz natural, cuenta con techo verde en toda su superficie y un sistema de climatización termomecánica que permite un ahorro del 70% de la energía.
+                <p text-align="justify">
+                    Las JAR2024 tendrán lugar en el edificio Cero + Infinito de la Ciudad Universitaria de la Universidad de Buenos Aires. Construído bajo la dirección del reconocido arquitecto Rafael Viñoly, este edificio posee más de 17.000 m<sup>2</sup> en dos plantas y subsuelo de servicios. Su concepto se apoya en dos jardines internos arbolados: el “cero” y el “infinito”, nombradas de esa manera por las figuras que representan sus contornos. Su perímetro está completamente vidriado, lo que permite que todos y cada uno de los ambientes dispongan de luz natural, cuenta con techo verde en toda su superficie y un sistema de climatización termomecánica que permite un ahorro del 70% de la energía.
                 </p>
             </div>
-            <div class="col-md-6" >
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.348480487198!2d-58.446042607821354!3d-34.544007159695326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5cb82d2f7bf%3A0xbcc4701a1bdae266!2sCiudad%20Universitaria%20-%20UBA%20-%20Pabell%C3%B3n%20Cero%2BInfinito!5e0!3m2!1ses!2sar!4v1701807337310!5m2!1ses!2sar" width="600" height="330" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+            <div class="col-md-6">
+                <div  >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.348480487198!2d-58.446042607821354!3d-34.544007159695326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5cb82d2f7bf%3A0xbcc4701a1bdae266!2sCiudad%20Universitaria%20-%20UBA%20-%20Pabell%C3%B3n%20Cero%2BInfinito!5e0!3m2!1ses!2sar!4v1701807337310!5m2!1ses!2sar" class="img-fluid" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+               </div>
         </div>
     </div>
+
+    <br>
+    <br>
 
     <div class="container-fluid">
         <div class="barra row" id="contacto">
@@ -224,9 +381,10 @@
                 <img src="a281df20-5e03-497c-b95c-c4e46fd25a71.jpg" class="img-fluid" alt="Responsive image">
             </div>    
             <div class="col-md-6" style="padding-bottom: 20px; ">
-                <h2 style="padding-left: 120px;";><strong>Contacto</strong></h2> 
-                <br>
-                <p style="text-align: center;">
+                <p text-align="center">
+                <h2 style="text-align: center;"> <strong>Contacto</strong></h2>
+                </p>
+                <p align="center">
                    <strong> <ion-icon name="mail-outline"></ion-icon>  info@jar.com.ar </strong>
                 </p>
             </div>    
@@ -239,9 +397,9 @@
 
      </div>
 
-     <div id="footer" style="background-color:#ffffff;">
+     <div id="footer" style="background-color:#ffffff; border-bottom: 10px solid lightblue;">
         <img src="logo-CONICET_opt.png" alt=""> 
-        <img src="UBAnegro2.jpg" alt="""> 
+        <img src="logoubanoire.png" alt=""> 
         <img src="1.png" alt="">
      </div>
 
